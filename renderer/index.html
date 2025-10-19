@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kinde Auth App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSP allows local file + external HTTPS connects for token/API calls -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+                   script-src 'self';
+                   style-src 'self' 'unsafe-inline';
+                   img-src 'self' https: data:;
+                   connect-src 'self' https: http:;"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header>
+      <nav class="nav container">
+        <h1 class="text-display-3">KindeAuth</h1>
+
+        <!-- Signed-out nav -->
+        <div id="nav-guest">
+          <button class="btn btn-ghost sign-in-btn" id="signInBtn">
+            Sign in
+          </button>
+          <button class="btn btn-dark" id="signUpBtn">Sign up</button>
+        </div>
+
+        <!-- Signed-in nav -->
+        <div id="nav-authed" class="profile-blob hidden">
+          <img id="avatar" class="avatar" src="" alt="User avatar" />
+          <div>
+            <p class="text-heading-2" id="fullName">—</p>
+            <a class="text-subtle" href="#" id="signOutLink">Sign out</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div class="container">
+        <!-- Guest hero -->
+        <section id="guest-hero" class="card hero">
+          <p class="text-display-2 hero-title">
+            Let&rsquo;s start authenticating
+          </p>
+          <p class="text-display-2 hero-title">with KindeAuth</p>
+          <p class="text-body-1 hero-tagline">Configure your app</p>
+          <a
+            class="btn btn-light btn-big"
+            href="https://docs.kinde.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Go to docs
+          </a>
+        </section>
+
+        <!-- Authed hero -->
+        <section id="authed-hero" class="card start-hero hidden">
+          <p class="text-body-2 start-hero-intro">Woohoo!</p>
+          <p class="text-display-2">Your authentication is all sorted.</p>
+          <p class="text-display-2">Build the important stuff.</p>
+        </section>
+
+        <!-- Next steps -->
+        <section id="next-steps" class="next-steps-section hidden">
+          <h2 class="text-heading-1">Next steps for you</h2>
+          <ul class="next-steps-list">
+            <li class="text-body-3">
+              Call your API using a fresh access token
+            </li>
+            <li class="text-body-3">
+              Use ID token claims to personalize the UI
+            </li>
+            <li class="text-body-3">Wire billing/entitlements as needed</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <strong class="text-heading-2">KindeAuth</strong>
+        <p class="footer-tagline text-body-3">
+          Visit our
+          <a class="link" href="https://kinde.com/docs">help center</a>
+        </p>
+        <small class="text-subtle"
+          >&copy; 2025 KindeAuth, Inc. All rights reserved</small
+        >
+      </div>
+    </footer>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

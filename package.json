@@ -1,0 +1,20 @@
+{
+  "name": "electron-kinde-auth",
+  "description": "A simple Electron app to authenticate with Kinde using OAuth",
+  "productName": "Electron Kinde Auth",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^4.19.2",
+    "keytar": "^7.9.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "electron": "^31.3.0"
+  }
+}
